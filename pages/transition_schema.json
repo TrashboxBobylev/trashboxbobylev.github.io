@@ -1,0 +1,69 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "seed": {
+      "type": "integer"
+    },
+    "transitions": {
+      "type": "object",
+      "patternProperties": {
+        "[\\d.*]": {
+          "type":"object",
+          "properties": {
+            "entrance": {
+              "type": "object",
+              "properties": {
+                "event": {
+                  "type": "integer"
+                },
+                "stage": {
+                  "type": "integer"
+                },
+                "x": {
+                  "type": "integer"
+                },
+                "y": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "event",
+                "stage",
+                "x",
+                "y"
+              ]
+            },
+            "exit": {
+              "type": "object",
+              "properties": {
+                "event": {
+                  "type": "integer"
+                },
+                "stage": {
+                  "type": "integer"
+                },
+                "x": {
+                  "type": "integer"
+                },
+                "y": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "event",
+                "stage",
+                "x",
+                "y"
+              ]
+            }
+          },
+          "required": [
+            "entrance",
+            "exit"
+          ]
+        }
+      }
+    }
+  }
+}
